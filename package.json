@@ -1,0 +1,15 @@
+{
+  "name": "ai-trace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Find AI traces in text and images: C2PA, IPTC labels, EXIF and XMP names, hidden characters, and an in-browser AI-image model with a tile heatmap. Runs in the browser.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.160.0"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ai-trace",
+  "compatibility_date": "2026-11-01",
+  // Static assets only: every scan runs in the visitor's browser, so the Worker has no code.
+  "assets": { "directory": "./public" }
+}

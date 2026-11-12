@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "type": "module",
+  "description": "Offline tools: score a folder of images with the page's model.",
+  "dependencies": {
+    "onnxruntime-node": "^1.20.1",
+    "sharp": "^0.34.0"
+  }
+}

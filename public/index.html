@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Trace</title>
+<meta name="description" content="An open research tool that shows the hidden characters, chat-app artifacts and AI provenance metadata (C2PA, IPTC, EXIF, XMP) in text and images, with the bytes behind every finding. Runs in your browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: header with tabs, then the text panes, the image report, or the method notes. */
+:root {
+  --bg: #eef1f2;
+  --surface: #ffffff;
+  --fg: #1b2226;
+  --muted: #56636a;
+  --line: #d3d9dc;
+  --copper: #9c4f1a;
+  --copper-ink: #ffffff;
+  --hidden: #f6c9c0; --artifact: #f3d6b4; --spacing: #c7dbe8; --homoglyph: #ddd0ec; --style: #e1e5e7;
+  --display: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111517; --surface: #192023; --fg: #e6ebed; --muted: #9ba7ad; --line: #2b3438;
+    --copper: #e08a4c; --copper-ink: #1b0f06;
+    --hidden: #6b2a20; --artifact: #6a4319; --spacing: #23435a; --homoglyph: #4a3563; --style: #333d42;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111517; --surface: #192023; --fg: #e6ebed; --muted: #9ba7ad; --line: #2b3438;
+  --copper: #e08a4c; --copper-ink: #1b0f06;
+  --hidden: #6b2a20; --artifact: #6a4319; --spacing: #23435a; --homoglyph: #4a3563; --style: #333d42;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px 48px;
+}
+.wrap { max-width: 1100px; margin: 0 auto; display: grid; gap: 20px; }
+.wrap > * { min-width: 0; }
+h1 { font: 700 2rem/1.1 var(--display); margin: 0; letter-spacing: 0.01em; }
+h2 { font: 700 1.4rem/1.2 var(--display); margin: 28px 0 8px; }
+h3 { font: 600 1.1rem/1.2 var(--display); margin: 0 0 6px; }
+h3.sub { margin-top: 14px; }
+header p { margin: 4px 0 0; color: var(--muted); max-width: 70ch; }
+a { color: var(--copper); }
+.small, .note, .muted { color: var(--muted); }
+.small, .note { font-size: 0.9rem; }
+code, textarea, .box { font: 13px/1.6 var(--mono); }
+code { overflow-wrap: anywhere; }
+
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tabs button { background: none; border: 0; border-bottom: 2px solid transparent; color: var(--muted); padding: 8px 14px; font: 600 0.95rem/1 var(--body); cursor: pointer; white-space: nowrap; }
+.tabs button[aria-selected="true"] { color: var(--fg); border-color: var(--copper); }
+
+.row { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 14px 0 6px; flex-wrap: wrap; }
+.h { font-weight: 600; font-size: 0.9rem; margin: 10px 0 4px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn {
+  display: inline-block; font: 600 0.9rem/1 var(--body); padding: 9px 14px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); color: var(--fg);
+}
+.btn.primary { background: var(--copper); border-color: var(--copper); color: var(--copper-ink); }
+.btn:focus-visible, .tabs button:focus-visible, textarea:focus-visible, .drop:focus-within, summary:focus-visible { outline: 2px solid var(--copper); outline-offset: 2px; }
+
+textarea { width: 100%; min-height: 160px; resize: vertical; background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 8px; padding: 10px; }
+.panes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.panes > div { min-width: 0; }
+@media (max-width: 760px) { .panes { grid-template-columns: 1fr; } }
+.box { min-height: 280px; max-height: 520px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px; margin: 0; }
+
+.cats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.cat { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-left: 6px solid; border-radius: 6px; padding: 5px 10px; font-size: 0.9rem; cursor: pointer; background: var(--surface); }
+.cat b { font-variant-numeric: tabular-nums; }
+.cat.hidden { border-left-color: var(--hidden); } .cat.artifact { border-left-color: var(--artifact); }
+.cat.spacing { border-left-color: var(--spacing); } .cat.homoglyph { border-left-color: var(--homoglyph); }
+.cat.style { border-left-color: var(--style); }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: baseline; }
+.dot.hidden { background: var(--hidden); } .dot.artifact { background: var(--artifact); } .dot.spacing { background: var(--spacing); }
+.dot.homoglyph { background: var(--homoglyph); } .dot.style { background: var(--style); }
+.summary { font-size: 0.9rem; margin: 10px 0 0; }
+
+mark { color: inherit; border-radius: 3px; padding: 0 2px; }
+mark.badge { font-size: 11px; font-weight: 600; padding: 0 4px; margin: 0 1px; }
+mark.hidden { background: var(--hidden); } mark.artifact { background: var(--artifact); }
+mark.spacing { background: var(--spacing); } mark.homoglyph { background: var(--homoglyph); }
+mark.style { background: var(--style); }
+mark.off { background: none; outline: 1px dashed var(--muted); }
+
+#payloads p { margin: 4px 0; }
+#payloads, #rules, .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin-top: 12px; min-width: 0; }
+#payloads:empty, #rules:empty { display: none; }
+
+.drop { display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center; text-align: center; min-height: 160px; border: 2px dashed var(--line); border-radius: 10px; padding: 24px; cursor: pointer; color: var(--muted); background: var(--surface); }
+.drop b { color: var(--fg); }
+.drop.over { border-color: var(--copper); }
+.flags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
+.flags:empty { display: none; }
+.flag { font-size: 0.8rem; font-weight: 600; border-radius: 999px; padding: 3px 10px; background: var(--artifact); }
+.flag.ok { background: var(--spacing); }
+.signals { margin: 4px 0 0; padding-left: 20px; }
+.signals li { margin: 6px 0; overflow-wrap: anywhere; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { text-align: left; padding: 8px 6px; border-top: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; border-top: 0; }
+td dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 2px 10px; }
+td dt { color: var(--muted); } td dd { margin: 0; overflow-wrap: anywhere; }
+.nowrap { white-space: nowrap; }
+.strip { color: var(--copper); font-weight: 600; } .keep { color: var(--muted); }
+details summary { cursor: pointer; color: var(--copper); font-weight: 600; font-size: 0.85rem; margin-top: 6px; }
+details.panel > summary { font: 600 1.1rem/1.2 var(--display); color: var(--fg); margin: 0; }
+details p { margin: 6px 0; }
+pre.hex, pre.raw { font: 12px/1.5 var(--mono); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 8px; margin: 4px 0 10px; overflow: auto; max-height: 320px; max-width: 100%; }
+pre.hex { white-space: pre; }
+pre.raw { white-space: pre-wrap; overflow-wrap: anywhere; }
+.status { display: inline-block; font-size: 0.8rem; font-weight: 600; border-radius: 6px; padding: 2px 8px; background: var(--style); }
+.status.yes { background: var(--artifact); }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
+.compare figure { margin: 0; min-width: 0; }
+.compare img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+.compare figcaption { font-size: 0.9rem; margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.compare .heat { display: block; margin-top: 0; }
+.compare .heat img { max-height: none; }
+@media (max-width: 760px) { .compare { grid-template-columns: 1fr; } }
+.scroll { overflow-x: auto; }
+.heat { position: relative; display: inline-block; max-width: 100%; margin-top: 8px; }
+.heat img { display: block; max-width: 100%; max-height: 560px; border-radius: 8px; }
+.heat canvas { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 8px; }
+.legend { display: flex; align-items: center; gap: 8px; font: 12px var(--mono); margin: 10px 0 4px; }
+.legend i { flex: 1; max-width: 320px; height: 10px; border-radius: 5px; background: linear-gradient(90deg, #000080, #0000ff 12.5%, #00ffff 37.5%, #ffff00 62.5%, #ff0000 87.5%, #800000); }
+
+.method { max-width: 80ch; }
+.method p, .method li { overflow-wrap: anywhere; }
+.method ol, .method ul { padding-left: 22px; }
+.method li { margin: 6px 0; }
+.method .wide { max-width: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AI Trace</h1>
+    <p>See the hidden characters, chat-app leftovers and provenance metadata that ChatGPT, Gemini, Claude, Grok and image generators leave in text and files, with the exact bytes behind every finding, and get a clean copy to compare. Everything runs in your browser. Nothing you paste or open is uploaded.</p>
+    <p class="small"><a href="https://github.com/imfaisii009/ai-trace">Source on GitHub</a> · MIT licence</p>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="tab-btn-text" data-tab="text" aria-selected="true" aria-controls="tab-text">Text</button>
+    <button role="tab" id="tab-btn-file" data-tab="file" aria-selected="false" aria-controls="tab-file">Image</button>
+    <button role="tab" id="tab-btn-method" data-tab="method" aria-selected="false" aria-controls="tab-method">How detection works</button>
+  </nav>
+
+  <main>
+    <section id="tab-text" role="tabpanel" aria-labelledby="tab-btn-text">
+      <div class="row">
+        <label for="input" class="h">Paste text</label>
+        <label class="btn">Open a text file<input type="file" id="text-file" hidden></label>
+      </div>
+      <textarea id="input" spellcheck="false" placeholder="Paste a reply from any chat app, or open a .txt, .md or code file"></textarea>
+      <div id="cats" class="cats"></div>
+      <p id="text-summary" class="summary" aria-live="polite"></p>
+      <div id="payloads"></div>
+      <div id="rules"></div>
+      <div class="panes">
+        <div>
+          <div class="row"><span class="h">Original, findings marked</span></div>
+          <div id="annotated" class="box"></div>
+        </div>
+        <div>
+          <div class="row">
+            <label for="clean" class="h">Clean copy</label>
+            <span class="actions"><button id="copy" class="btn">Copy</button><button id="download-text" class="btn">Download</button></span>
+          </div>
+          <textarea id="clean" class="box" readonly></textarea>
+        </div>
+      </div>
+      <p class="note">Statistical watermarks such as Google's SynthID Text are carried by the choice of words, not by characters, so they do not show here. See How detection works.</p>
+    </section>
+
+    <section id="tab-file" role="tabpanel" aria-labelledby="tab-btn-file" hidden>
+      <label id="drop" class="drop">
+        <input type="file" id="file" hidden>
+        <b>Drop an image here, or click to choose one</b>
+        <span>JPEG, PNG and WebP are read block by block and cleaned. Other files get a string scan. Text files open in the Text tab.</span>
+      </label>
+      <div id="file-result" aria-live="polite"></div>
+    </section>
+
+    <section id="tab-method" role="tabpanel" aria-labelledby="tab-btn-method" class="method" hidden>
+      <p>This page reads the bytes of what you paste or open, in your browser. There is no model and no server. Every finding comes from one of the rules below, and every image finding names the byte range it came from, so you can check it with a hex editor or another tool.</p>
+
+      <h2>Text</h2>
+      <p>The rules run in this order. Where two matches overlap, the earlier rule wins, so a whole citation marker is claimed before the private-use characters inside it. Hidden messages in tag characters and variation selectors are decoded and shown.</p>
+      <div id="method-rules" class="scroll wide"></div>
+
+      <h2>Images: walking the file</h2>
+      <p>The file is read as a list of blocks, the way a decoder reads it. Blocks a decoder needs to draw the picture are kept and copied byte for byte. Every other block is metadata: it is listed with its offset, its raw bytes and what it says, and left out of the clean copy. Nothing is re-encoded, so the clean image has exactly the same pixels. One block is added back: when a JPEG's EXIF says the photo is rotated, the clean copy gets a 36-byte EXIF block that holds only the rotation, so it is not shown on its side.</p>
+      <div id="method-blocks" class="scroll wide"></div>
+
+      <h2>C2PA content credentials, step by step</h2>
+      <p>C2PA (the Coalition for Content Provenance and Authenticity) defines a signed record of where a file came from. OpenAI, Google, xAI, Adobe and others attach one to generated images. This page reads it like this:</p>
+      <ol>
+        <li><b>Find the store.</b> In JPEG it is in APP11 segments (marker <code>FF EB</code>). Each segment starts with <code>JP</code>, a 2-byte box instance and a 4-byte sequence number, then the 8-byte header of the outer box (length and <code>jumb</code>), then data. Segments of one instance are put in sequence order and joined, keeping the box header only once. In PNG the store is the whole <code>caBX</code> chunk; in WebP the <code>C2PA</code> chunk.</li>
+        <li><b>Walk the JUMBF boxes</b> (ISO/IEC 19566-5). A box is a 4-byte big-endian length, a 4-character type and data. A <code>jumb</code> superbox starts with a <code>jumd</code> description box: a 16-byte type UUID whose first four bytes name the kind (<code>c2pa</code> store, <code>c2ma</code> manifest, <code>c2as</code> assertion store, <code>c2cl</code> claim, <code>c2cs</code> signature, <code>cbor</code> or <code>json</code> content), a toggles byte, and a null-terminated label when toggle bit <code>0x02</code> is set. Content sits in <code>cbor</code>, <code>json</code>, <code>bfdb</code> and <code>bidb</code> boxes. The JUMBF tree under each C2PA block shows every box found, with its label.</li>
+        <li><b>Pick the active manifest.</b> The store holds one manifest per signing step, oldest first. The last one describes the file as it is now; earlier ones are listed as earlier manifests.</li>
+        <li><b>Read the claim.</b> The claim (<code>c2pa.claim</code> or <code>c2pa.claim.v2</code>) is CBOR (RFC 8949). It names the claim generator, the software that signed, and lists the assertions it covers with their hashes.</li>
+        <li><b>Read the assertions.</b> <code>c2pa.actions</code> lists what was done: <code>c2pa.created</code>, <code>c2pa.edited</code>, <code>c2pa.converted</code>, <code>c2pa.watermarked</code>, each with a <code>digitalSourceType</code> (the IPTC term; <code>trainedAlgorithmicMedia</code> means a generative model made it), a <code>softwareAgent</code> and a time. <code>c2pa.ingredient</code> records source files. <code>c2pa.hash.data</code> is a SHA-256 hash over the file, leaving out the store itself. <code>c2pa.soft-binding</code> names a watermark or fingerprint that can find the credentials again after they are stripped.</li>
+        <li><b>Read the signature.</b> It is a COSE_Sign1 structure (RFC 9052, CBOR tag 18): protected header, unprotected header, an empty payload (the claim is what is signed) and the signature. Header <code>1</code> is the algorithm (<code>-7</code> ES256, <code>-35</code> ES384, <code>-36</code> ES512, <code>-37</code> PS256, <code>-8</code> EdDSA). Header <code>33</code> (x5chain) holds the signer's X.509 certificates in DER, read here for subject, issuer and validity dates. <code>sigTst</code> in the unprotected header holds an RFC 3161 timestamp.</li>
+        <li><b>What is not done here.</b> The hash is not recomputed, the signature is not verified, and the certificate is not checked against the C2PA trust list, so a forged store is shown as written. To verify, use <a href="https://contentcredentials.org/verify" rel="noopener">contentcredentials.org/verify</a> or the open-source c2patool. The specification is at <a href="https://c2pa.org/specifications/" rel="noopener">c2pa.org/specifications</a>.</li>
+      </ol>
+
+      <h3>What real files contained</h3>
+      <p class="small">Images generated in late 2026 and read with this page. Generators change their output, so treat this as a dated sample.</p>
+      <div class="scroll wide"><table>
+        <thead><tr><th>Made with</th><th>Where the store is</th><th>Claim generator</th><th>Signature</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Grok Imagine</td><td>PNG <code>caBX</code> chunk, straight after IHDR (byte 33), about 13 KB</td><td>Grok Imagine 0.0.0</td><td>EdDSA. Self-signed certificate: common name "xAI Grok Imagine", organisation "Self-signed ephemeral certificate (Content Authenticity SDK) -- LOCAL USE ONLY", valid for one year. No certificate authority, so a verifier will not trust it</td><td><code>digitalSourceType</code> trainedAlgorithmicMedia</td></tr>
+          <tr><td>ChatGPT</td><td>PNG <code>caBX</code> chunk at byte 33, about 21 KB</td><td>OpenAI Media Service API, software agent ChatGPT</td><td>ES256 with a timestamp, signed by OpenAI OpCo, LLC, certificate issued by Trufo</td><td>Actions include <code>c2pa.watermarked.unbound</code>: the manifest declares a watermark in the pixels</td></tr>
+          <tr><td>Gemini</td><td>JPEG APP11 segment at byte 20, about 6 KB</td><td>Google C2PA Core Generator Library</td><td>ES256 with a timestamp, signed by Google LLC</td><td>Labelled trainedAlgorithmicMedia; Google also adds SynthID, which is not in the file's metadata</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2>XMP and the IPTC AI label</h2>
+      <p>IPTC's Digital Source Type vocabulary gives a standard label for synthetic media. In XMP it is written as <code>Iptc4xmpExt:DigitalSourceType</code> with a value such as <code>http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia</code> (made by a generative model) or <code>compositeWithTrainedAlgorithmicMedia</code> (edited with one). The same terms appear inside C2PA actions. This page reports the label wherever it appears and names the block and byte offset.</p>
+
+      <h2>SynthID and other pixel watermarks</h2>
+      <p>SynthID is Google DeepMind's watermark for content from Google's models. For images it is added to the pixel values as the image is generated, and is designed to survive cropping, resizing, colour changes and compression. It is not stored in any block of the file, so nothing in the file's structure points to it, and removing metadata leaves it in place. Reading it needs Google's detector model, so no file reader, this one included, can see it. To check an image, ask the Gemini app whether it was made with Google AI, or use Google's SynthID Detector.</p>
+      <p>What this page can show is the metadata Google writes alongside the watermark: C2PA credentials and the IPTC label. When those name a Google model, or carry Google's AI label, the image report marks SynthID as likely. The same applies to the other pixel watermarks in the image report (Adobe TrustMark, Meta Video Seal and Stable Signature): the file may say one is there, but the watermark itself is only readable with its own decoder.</p>
+
+      <h2 id="after-cleaning">Why an image is still flagged after cleaning</h2>
+      <p>Cleaning removes what the file says about itself: the C2PA record, the IPTC label, the tool names. A detector that still says "AI" after cleaning is not reading any of that. It is reading the pixels, and the clean copy has exactly the same pixels. This table shows which signals cleaning removes.</p>
+      <div class="scroll wide"><table>
+        <thead><tr><th>Signal</th><th>Where it lives</th><th>Removed by cleaning</th></tr></thead>
+        <tbody>
+          <tr><td>C2PA content credentials</td><td>A metadata block (APP11, <code>caBX</code>, <code>C2PA</code>)</td><td>Yes</td></tr>
+          <tr><td>IPTC label <code>trainedAlgorithmicMedia</code></td><td>XMP, or the actions inside C2PA</td><td>Yes</td></tr>
+          <tr><td>AI tool names and prompts</td><td>EXIF, XMP, PNG text chunks</td><td>Yes</td></tr>
+          <tr><td>Pixel watermark (SynthID and others)</td><td>Spread through the pixel values of the whole image</td><td>No</td></tr>
+          <tr><td>The generator's own pixel statistics</td><td>Every pixel the model drew. An AI edit usually redraws all of them, not only the part that changed</td><td>No</td></tr>
+          <tr><td>Image size on the generator's grid</td><td>The width and height, such as 864 &times; 1152: about 1 megapixel, both sides multiples of 32</td><td>No</td></tr>
+          <tr><td>JPEG encoder settings</td><td>The quantisation tables, which the image needs, so the cleaner keeps them</td><td>No</td></tr>
+          <tr><td>No camera EXIF at all</td><td>An absence: no make, model, lens or exposure</td><td>Cleaning makes this more noticeable, not less</td></tr>
+        </tbody>
+      </table></div>
+      <p><b>Why the whole image counts, not just the edit.</b> An image model does not paste a patch into a photo. It encodes the photo into its own internal form, generates a new one, and decodes every pixel again. The camera's traces go everywhere at once: the sensor's noise pattern, the pattern left by its colour filter, its sharpening and compression. In their place are the textures of the model's decoder. AI-image classifiers are trained on that difference, and a pixel watermark like SynthID is written across the whole frame as the image is decoded.</p>
+      <p><b>A worked example.</b> A phone photo of an empty room, with a camera-app stamp of direction, position and time across the top, was edited with an image model to remove a wall socket and marks under the window. The copies we were sent had no metadata at all, so this page reports nothing for either, yet a detector still flagged the edit. Comparing the two files:</p>
+      <ul>
+        <li>The edit is 864 &times; 1152: exactly 3:4, 1.0 megapixels, both sides multiples of 32. The original is 1200 &times; 1600, the kind of size a messaging app produces when it scales down a phone photo.</li>
+        <li>The edit is a baseline JPEG at quality 95 with the standard libjpeg tables (luminance row 2, 1, 1, 2, 2, 4, 5, 6), the usual output of a server-side encoder. The original is a progressive JPEG at quality 75.</li>
+        <li>The edit is a new image, not the original with a patch. After lining the two up, textured areas well away from the socket, such as the carpet, still differ from the original pixel by pixel. Only flat areas like the bare walls come close, because there is little there to change.</li>
+      </ul>
+      <p>Which of these a detector used depends on the detector. A check in the Gemini app reads SynthID, which is there only if a Google model made the edit. Other detectors are classifiers that read pixel statistics, and may also weigh the size. None of them read the metadata this page removes, which is why the clean copy gets the same answer as the original edit.</p>
+
+      <h2 id="classifiers">How online AI-image detectors decide</h2>
+      <p>These detectors read pixels, not metadata. A trained model scores the image, and nothing in a file can be pointed to as the reason.</p>
+      <ul>
+        <li><b>DeepAI AI Image Detector</b>, observed from its page code and network traffic on 11 November 2026. The page uploads the image to <code>api.deepai.org/ai-image-detector-upload</code>, then asks <code>/ai-image-detector-query</code> once a second until the job is done. The answer is one number from 0 to 100. At 50 or more the page says the image is likely created by AI. Confidence is High at 80 or more (or 20 or less), Medium at 60 or more (or 40 or less), and Low in between. Nothing is worked out in the browser and no reason is given: the number comes from a model on DeepAI's server, and a model like that scores an image in a fraction of a second on a GPU. The page also sends the same image to <code>/analyze-image-for-ads</code> to choose adverts, unless the account has paid to remove ads, and its "advanced analysis" links out to TruthScan.</li>
+        <li><b>TruthScan</b>, from a result it gave for the worked example above. It returns a score, a heatmap and paragraphs of reasoning. The heatmap comes from the classifier. It colours, blue to red, the parts of the image that pushed the score up, most likely as a class activation map, the usual way to draw one. The reasoning reads like a language model describing the image after the verdict. It cited "synthetic text overlays" and the "lack of natural camera metadata", but the untouched original has the same camera-app stamp and no camera metadata either, so those points do not tell the two apart.</li>
+      </ul>
+
+      <h2 id="pixel-model">The AI-image model on this page</h2>
+      <p>The Pixel check in the image report runs an open model of the same kind as DeepAI's and TruthScan's, in the browser. It decodes the original and the clean copy, compares them pixel by pixel, scores them and draws a heatmap on each, side by side, so you can see whether cleaning moved anything. When the pixels are identical, which is the usual case, the model runs once: identical input gives identical output.</p>
+      <ul>
+        <li><b>Model.</b> Community Forensics (Jeongsoo Park and Andrew Owens, CVPR 2025), a ViT-S/16 vision transformer trained on images from 4,803 generators, MIT licence. We fine-tuned it on 596 phone photos and 987 edits of them made with Grok's image editor, plus generated and real images from the Community Forensics dataset, so it sees a photo that an image model has regenerated, not only a fully generated image. It is exported to ONNX with a second output for the heatmap and its weights stored as 8-bit integers: 23 MB, served with this page and run with ONNX Runtime Web in a worker. The image is not uploaded. How it was trained: <a href="https://github.com/imfaisii009/ai-trace/blob/main/docs/finetune.md">docs/finetune.md</a>.</li>
+        <li><b>Tiles.</b> The model sees 384 &times; 384 pixels at a time. Shrinking a whole photo to that size wipes out the fine texture an edit leaves behind, so the page cuts the image into 384-pixel tiles at its own resolution and scores each one. Images over 3,072 pixels on the long side are scaled down first. The image score is the mean of the scores of the tiles on that 384-pixel grid.</li>
+        <li><b>The heatmap.</b> Inside a tile the model works on 24 &times; 24 patches of 16 pixels and reads its verdict from one summary token that gathers them. The exported model also applies that same scoring head to every patch, so each 16-pixel patch gets a score from the model's own last layer, not from an extra model. Within a tile the patch scores are divided by their maximum and multiplied by the tile's score, so a tile the model calls camera-made stays blue whatever its patches rank. For the map, tiles also run halfway between the grid positions, every 192 pixels, and overlapping tiles are blended with weights that fall to zero at each tile's edge, so no seams show. Blue is 0, red is 100%.</li>
+        <li><b>The line.</b> A mean of 60% or more is reported as looking generated. We set it from the tests below: at 60% every Grok edit was caught and no held-out phone photo was called AI.</li>
+        <li><b>Speed.</b> After a one-time 23 MB download, each tile takes about a third of a second on a recent laptop. The heatmap needs a tile every 192 pixels, so 864 &times; 1152 (20 tiles) takes about 7 seconds, 1200 &times; 1600 (48 tiles) about 18, and a 12-megapixel photo, scaled to 3,072 pixels, about a minute (165 tiles). Phones are slower. The model runs once when both copies decode to the same pixels, and twice when they differ. The page is cross-origin isolated so the model can use several threads; it ran three times slower without.</li>
+      </ul>
+      <p>Tests on 11 November 2026, with the same settings as the page, on images that share nothing with the fine-tuning data:</p>
+      <div class="scroll wide"><table>
+        <thead><tr><th>Images</th><th>Count</th><th>Called AI before fine-tuning (line 20%)</th><th>Called AI now (line 60%)</th></tr></thead>
+        <tbody>
+          <tr><td>Grok edits of phone photos ("recreate", "enhance", "same photo, but…")</td><td>102</td><td>59</td><td>102</td></tr>
+          <tr><td>Grok text-to-image photos of rooms, streets, food and parks</td><td>20</td><td>17</td><td>20</td></tr>
+          <tr><td>Other generated images (Firefly 2, Imagen 3, DALL&middot;E 3), Community Forensics test set</td><td>101</td><td>97</td><td>101</td></tr>
+          <tr><td>Phone photos from Wikimedia Commons, at the size Commons serves</td><td>80</td><td>15</td><td>0</td></tr>
+          <tr><td>Real images, Community Forensics test set</td><td>150</td><td>2</td><td>1</td></tr>
+          <tr><td>Kodak test photos (lossless film scans)</td><td>24</td><td>0</td><td>5</td></tr>
+          <tr><td>The same Kodak photos saved as JPEG</td><td>24</td><td>0</td><td>2</td></tr>
+        </tbody>
+      </table></div>
+      <p>So it now catches every Grok edit, against 58% before, and calls 6 of 254 real images AI, against 17. The heatmap changed with it: on a Grok edit, 99% of tiles score 50% or more, against 31% before, so the map covers the regenerated photo instead of a few tiles. All the training edits came from Grok, so edits from other tools may score lower, and lossless film scans and screenshots are its weak spot. A score is a pointer, not proof.</p>
+      <p>In the worked example, the original now scores 20%, under the line. Its heat sits on the camera-app stamp across the top, which is drawn by the app, and the room stays cool. Before fine-tuning, the edit scored 29% and the original 1%; the grid tiles that scored highest on the edit were along the top, over the stamp and the ceiling, and TruthScan's heatmap for the same image weighted the bedding and the carpet instead. Two models trained on different data can agree on a verdict but only partly on where the evidence is, which is why a heatmap explains a score but does not prove it.</p>
+
+      <h2>SynthID Text</h2>
+      <p>For text, SynthID changes which words the model picks. A keyed pseudo-random function scores the candidate tokens at each step and sampling favours the high scorers. A detector holding the same key scores a passage; without the key the choices look like ordinary writing. Google released the method as open source in October 2024, but the keys used by Gemini are private. It leaves no characters behind, so the Text tab cannot see it, and rewording the text weakens it.</p>
+
+      <h2>Limits</h2>
+      <ul>
+        <li>Missing metadata proves nothing. Most social sites and messaging apps strip it on upload, and many generators write none.</li>
+        <li>A name in the metadata is a lead, not proof: a camera made by Google writes "Google" too. The image report quotes the text around every name so you can judge.</li>
+        <li>C2PA hashes and signatures are read, not verified.</li>
+        <li>The AI-image model gives a score, not proof. It misses some generated images and flags some real photos, and so do the online detectors.</li>
+        <li>Only JPEG, PNG and WebP are parsed block by block. HEIC, AVIF, video and audio get a string scan only.</li>
+        <li>Typography rules (dashes, curly quotes) catch habits that many people share. They are off by default.</li>
+      </ul>
+    </section>
+  </main>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

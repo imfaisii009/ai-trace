@@ -1,0 +1,598 @@
+# Wikimedia Commons photos used to fine-tune the model (docs/finetune.md), each under its own licence.
+# File page: https://commons.wikimedia.org/wiki/<title>
+File:"Muzhathang Sri Chavarukavu Thottampattu".jpg
+File:'23-'24 BrightDrop Zevo EV600 Prombexel.jpg
+File:09 Tampak depan shelter angkutan kota & MPU Terminal Bayuangga.jpg
+File:15 April at Keukenhof, Lisse (2022) 459.jpg
+File:15 April at Keukenhof, Lisse (2022) 460.jpg
+File:15 April at Keukenhof, Lisse (2022) 461.jpg
+File:15 April at Keukenhof, Lisse (2022) 465.jpg
+File:15 April at Keukenhof, Lisse (2022) 466.jpg
+File:15 April at Keukenhof, Lisse (2022) 467.jpg
+File:15 April at Keukenhof, Lisse (2022) 469.jpg
+File:15 April at Keukenhof, Lisse (2022) 471.jpg
+File:15 April at Keukenhof, Lisse (2022) 472.jpg
+File:15 April at Keukenhof, Lisse (2022) 473.jpg
+File:15 April at Keukenhof, Lisse (2022) 476.jpg
+File:15 April at Keukenhof, Lisse (2022) 477.jpg
+File:15 April at Keukenhof, Lisse (2022) 479.jpg
+File:15 April at Keukenhof, Lisse (2022) 482.jpg
+File:15 April at Keukenhof, Lisse (2022) 49.jpg
+File:2016-06-06 08 09 33 View south along U.S. Route 220 (Petersburg Pike) south of Upper Tract in Pendleton County, West Virginia.jpg
+File:20180410 150735 April 2018 in Bucharest.jpg
+File:20180411 124550 April 2018 in Bucharest.jpg
+File:20180411 152427 April 2018 in Bucharest.jpg
+File:20180411 153028 April 2018 in Bucharest.jpg
+File:20180411 153045 April 2018 in Bucharest.jpg
+File:20180411 153800 April 2018 in Bucharest.jpg
+File:20180411 153806 April 2018 in Bucharest.jpg
+File:20180411 153813 April 2018 in Bucharest.jpg
+File:20180411 153956 April 2018 in Bucharest.jpg
+File:20180411 154132 April 2018 in Bucharest.jpg
+File:20180411 154936 April 2018 in Bucharest.jpg
+File:20190621 Kbhvn 1604 (48445253326).jpg
+File:20190621 Kbhvn 1608 (48445408147).jpg
+File:20190622 Hella 1636 (48454873146).jpg
+File:20190622 Husadalur-Langidalur 1670 (48460472927).jpg
+File:20240715 154721 Polska-México New Earth International Film Festival mural, Rondo Mogilskie, Kraków 01.jpg
+File:20240715 154721 Polska-México New Earth International Film Festival mural, Rondo Mogilskie, Kraków 02.jpg
+File:20240715 155311 Biuro rachunkowe Sowa sign, Kraków.jpg
+File:20240715 155311 Gabinet stomatologiczny sign, Kraków.jpg
+File:20240726 192815 Wyspiański na Mogilskim information plaque.jpg
+File:20240810 163045 Fram ship, Fram museum.jpg
+File:20240810 170613 Ra, Kon-Tiki Museum.jpg
+File:20240810 190337 Oslo City Hall 01.jpg
+File:20240811 130504 01 Oslo, Norway 04 - Venus de Milo with Drawers (Vénus de Milo aux tiroirs).jpg
+File:20240811 130504 01 Oslo, Norway 05 - Venus de Milo with Drawers (Vénus de Milo aux tiroirs).jpg
+File:20240811 130504 01 Oslo, Norway 07.jpg
+File:2025.11.22 Sabaton Tauron Arena Kraków 34.jpg
+File:2025.11.22 Sabaton Tauron Arena Kraków 35.jpg
+File:2025.11.28 Coco Bongo Zmiana Klimatu 07.jpg
+File:20250526 Zixiao Gong (133548).jpg
+File:20250605 旗鼓一號甲板階梯間.jpg
+File:20250806 Fortaleza de Nossa Senhora da Guia.jpg
+File:20250830 Outside of the Yinglong Lou.jpg
+File:20251109 Nine-dragon wall in the City University of Macau seen from the north.jpg
+File:20251216 Inside of the Fenglu Cheng Huang Temple (095450).jpg
+File:20251217 65 and 67 Mashi Jie.jpg
+File:20251217 Xichu Tusi Qianshi Minzhai.jpg
+File:2026 Chevrolet Colorado au SIAM 2026.jpg
+File:2026 Chevrolet Equinox EV SIAM 2026.jpeg
+File:2026 Chevrolet Silverado Z71 SIAM 2026.jpeg
+File:2026 Ford Maverick SIAM 2026.jpeg
+File:2026 Ford Ranger SIAM 2026.jpeg
+File:2026 GMC Sierra 1500 au SIAM 2026.jpg
+File:2026 Toyota Land Cruiser au SIAM 2026.jpeg
+File:2026-05-02 Deutschland gegen Österreich (Eishockey-Länderspiel) by Sandro Halank–062.jpg
+File:20260118 Xiangsi Pubu (132405).jpg
+File:20260118 Xiangsi Pubu (132546).jpg
+File:20260214 Liuzhou Wenmiao (153325).jpg
+File:20260215 Lei Shan.jpg
+File:20261003 Calvary Katowice Panewniki autumn 09.jpg
+File:20261003 Hibiscus syriacus Ketmia syryjska Panewniki 01.jpg
+File:20261101 Karolinka Katowicki Park Leśny 01.jpg
+File:20261101 Karolinka Katowicki Park Leśny 03.jpg
+File:20261101 Krokodyle Katowicki Park Leśny 02.jpg
+File:20261101 Posąg kobiety Katowicki Park Leśny 03.jpg
+File:20261101 Żubr Katowicki Park Leśny 02.jpg
+File:20261101 Żubr Katowicki Park Leśny 04.jpg
+File:20261107 Poleska Street Ligota Katowice 03.jpg
+File:20261109 Hangzhou Shi Xiaoshan Qu Chengxiang Jiedao Nanshi Shequ Jumin Weiyuanhui.jpg
+File:20261109 Xiaoshan Tushuguan.jpg
+File:33 And 34, North Street.jpg
+File:3640-3639 SMRT North-South Line 09-08-2025.jpg
+File:53rd NYSPHSAA Wrestling Championships at Albany Times Union Center.jpg
+File:A Very Dark Blue Night Sky.jpg
+File:Abensbergstr 4 Moosach 3.jpg
+File:Ahorntal - Burg Rabenstein.JPG
+File:Airfield in Gliwice-Drop Zone Silesia, 2026.09.26 03.jpg
+File:Airfield in Gliwice-Drop Zone Silesia, 2026.09.26 05.jpg
+File:Airfield in Gliwice-Drop Zone Silesia, 2026.09.26 11.jpg
+File:Aktendeckel Bauakte.jpg
+File:Alte Fabrikanlage Zur Grünen Eiche 26 Moosach 2.jpg
+File:Ana Štefok's grave 20240726 170401.jpg
+File:Anfore di Pantalica.JPG
+File:Apothicairerie au 19e siècle..JPG
+File:Arbre de Jessé 1.jpg
+File:Asado Colombiano.jpg
+File:Asahi Syuzo Nagaoka1.jpg
+File:Audi A6 allroad e-hybrid quattro (C9) – f 21082026.jpg
+File:Audi Q3 Sportback e-hybrid S line (FJ) – f 21082026.jpg
+File:Audi R8 Spyder V10 (4S, Facelift) – f 07062026.jpg
+File:Audi R8 Spyder V10 (4S, Facelift) – h 07062026.jpg
+File:Audi RS 5 Avant (B10) – h 21082026.jpg
+File:Augustow. Park.jpg
+File:BMW 2002 (5624761780).jpg
+File:BMW 330i M Sport (4564512912).jpg
+File:BMW 520d Touring (4871002283).jpg
+File:BMW M5 (4484882453).jpg
+File:BMW i3 50 xDrive First Edition (NA0) – h 20082026.jpg
+File:Badia Polesine 30052010166.jpg
+File:Ballast Point Brewing & Spirits Company 1 2015-03-01.JPG
+File:Bank building; Dnipro, Ukraine; 11.11.19.jpg
+File:Białystok Cmentarz Miejski grób 02.jpg
+File:Biblioteca Nacional de España en abril de 2023 01.jpg
+File:Biblioteca Nacional de España en abril de 2023 08.jpg
+File:Biblioteca Nacional de España en abril de 2023 09.jpg
+File:Biblioteca Nacional de España en abril de 2023 10.jpg
+File:Biblioteca Nacional de España en abril de 2023 11.jpg
+File:Biblioteca Nacional de España en abril de 2023 12.jpg
+File:Biblioteca Nacional de España en abril de 2023 17.jpg
+File:Biblioteca Nacional de España en abril de 2023 18.jpg
+File:Blakeney Point Natural Nature Reserve - Seals Norfolk UK.jpg
+File:Block 350 bus stop 11-08-2025.jpg
+File:Bloomsbury Square, London, Boris bike.jpg
+File:Bright House Networks Stadium, pregame (Maryland @ UCF) (29687571851).jpg
+File:Brugge, West-Vlaanderen 384.jpg
+File:Brugge, West-Vlaanderen 387.jpg
+File:Brugge, West-Vlaanderen 395.jpg
+File:Brugge, West-Vlaanderen 397.jpg
+File:Brugge, West-Vlaanderen 402.jpg
+File:Brugge, West-Vlaanderen 409.jpg
+File:Brugge, West-Vlaanderen 410.jpg
+File:Brugge, West-Vlaanderen 411.jpg
+File:Bryce Canyon National Park 2.JPG
+File:Bryce Canyon National Park.JPG
+File:Bull-Dog Sauce headquarters, at Nihonbashi-Kabutocho, Chuo, Tokyo (2019-01-02) 01.jpg
+File:Carabineros Gestores de Convivencia y Prosperidad Rural (8077351596).jpg
+File:Carabineros Gestores de Convivencia y Prosperidad Rural (8077361127).jpg
+File:Chalakkudy River at Thumboormuzhi IMG20231023144613.jpg
+File:Chenghuang Street outside the Tianyang Chenghuang Temple, as taken on 11 January 2021.jpg
+File:Chevy Chase Elementary.jpg
+File:Chinese Garden Station concourse 11-08-2025(2).jpg
+File:Collection de tiroirs 1.JPG
+File:Collection de tiroirs 3.jpg
+File:Collegium Maius (Kraków), 2019, 02.jpg
+File:Conch shell 3.jpg
+File:Crested Hen 1.jpg
+File:Crested Hen 2.jpg
+File:Crested Rooster.jpg
+File:Crosley portable record player - 2026-09-12 - Andy Mabbett.jpg
+File:Dachauer Str 300 Moosach 1.jpg
+File:Dairokuten jinjya (Takaido-nishi, Suginami-ku, Tokyo) 01.JPG
+File:Dairokuten jinjya (Takaido-nishi, Suginami-ku, Tokyo) 03.JPG
+File:De Carle Park, 23 Jul 2026.jpg
+File:Death Valley National Park.JPG
+File:Dom Bonhoeffera Bonhoeffer-Haus Szczecin II.jpg
+File:Dr Thneed 'Citation Needed' necklace - 2026-07-25 - Andy Mabbett.jpg
+File:Duomo Cervia.jpg
+File:EKK Highway Bus iC Card.jpg
+File:ETR Takada Station Bansen Hyojihyo.jpg
+File:ETR Takada Station Kanko Annnaijo.jpg
+File:EU Parliament 2017.jpg
+File:Eggmühler Str 32 Moosach.jpg
+File:Eininger Str 34 Moosach.jpg
+File:Endovibrador representación gráfica.jpg
+File:Engelhardsberg 24.07.2014 16-007.JPG
+File:Engelhardsberg 24.07.2014 16-008.JPG
+File:Escudo alhambra.JPG
+File:Ezhattumugham-Thumboormuzhi Cable Suspension Bridge IMG20231023145254.jpg
+File:Ezhattumugham-Thumboormuzhi Cable Suspension Bridge IMG20231023150005.jpg
+File:Fasciated sunflower - 2026-08-14 - Andy Mabbett.jpg
+File:Father Felix Raj at the statue of Mahatma Gandhi in UN garden Geneva.jpg
+File:Flor Maravilla amarilla.jpg
+File:Flowers from Karnataka Siri Horticulture Garden Ooty IMG20250629182950 10.jpg
+File:Flowers from Karnataka Siri Horticulture Garden Ooty IMG20250629182950 14.jpg
+File:Flowers from Karnataka Siri Horticulture Garden Ooty IMG20250629182950 16.jpg
+File:Flowers from Karnataka Siri Horticulture Garden Ooty IMG20250629182950 18.jpg
+File:Fortune sticks made of bamboo in red container beside Chinese lunar calendar booklets at Jindun Chenghuang Temple, as taken on 11 January 2021.jpg
+File:Frammenti di fiasco Stentinello.JPG
+File:Franklin L. McKean Hall (building 103) - Fort Douglas, Salt Lake City, Utah - 8 August 2026.jpg
+File:GER — BY — Oberbayern – Landkreis Rosenheim — Gemeinde Chiemsee — Herreninsel — Neues Schloss 1 (König Ludwig II.-Museum · Silber-Eßbesteck, um 1875, Teller mit Portraits) 2026-10-03 Mattes.jpg
+File:GER — BY — Oberbayern – Landkreis Rosenheim — Gemeinde Chiemsee — Herreninsel — Neues Schloss 1 (König Ludwig II.-Museum · Waschgarnitur Münchner Residenz 1868-69) 2026-10-03 Mattes.jpg
+File:GER — BY — Oberbayern — Landkreis Eichstätt — Kinding — An der Wehrkirche 6 (Informationstafel „Kirchenburg“ und Wehrkirchhof) — 2026-10-30 Mattes.jpg
+File:GER — BY — Oberbayern — Landkreis Neuburg-Schrobenhausen — Neuburg an der Donau — Schrannenplatz 131 (Gaststätte · Informationstafel) — 2025-06-06 Mattes.jpg
+File:GER — BY — Regierungsbezirk Oberbayern – Landkreis Rosenheim — Gemeinde Chiemsee — Herreninsel — Altes Schloss 3 (ehem. Augustiner-Chorherrenstift Herrenchiemsee · museale Abteiküche) 2026-10-03 Mattes.jpg
+File:GER — BY — Regierungsbezirk Schwaben – Landkreis Ostallgäu — Stadt Füssen — Lechhalde 3 — Museum der Stadt Füssen (Flur · Lechverlauf) 2026-09-27 Mattes.jpg
+File:GER — Niedersachsen — Metropolregion H-B-G-W — Region Braunschweig — Braunschweig — Burgplatz 4 (Braunschweiger Löwe · Inschrift) 2026-10-30 Mattes.jpg
+File:GER — RLP — Trier — Glockenstraße 2 (Kasslertaschen roh) 2025-05-22 Mattes.jpg
+File:GMC Canyon AT4X Crew Cab 2026 @ Montréal Auto Show 2026.jpeg
+File:Gaillardia 🌸.jpg
+File:Galerie Kuzebauch Ricanova 19 Brevnov A.jpg
+File:Galerie Kuzebauch Ricanova 19 Brevnov B.jpg
+File:Garten Ebersbach Schöpstal.jpg
+File:Gebäude Löbau Neusalzaer Straße.jpg
+File:Gerbang Masuk Terminal Kertajaya (Jl. By Pass).jpg
+File:Ghilina Grossa lato est.jpg
+File:Ghilina Grossa lato ovest.jpg
+File:Gierczak Street in Kołobrzeg, September 2022 05.jpg
+File:Gierczak Street in Kołobrzeg, September 2022 06.jpg
+File:Golden penda (Xanthostemon chrysanthus) along Stamford Road outside Singapore Management University - 20140416-02.jpg
+File:Ground turkey (4515834437).jpg
+File:Görlitz, Kränzelstraße Altstadtfest 2010.jpg
+File:Görlitzer Straße 10 Löbau 2011.jpg
+File:H3DAR Un-Conference 01.jpg
+File:H3DAR Un-Conference 02.jpg
+File:H3DAR Un-Conference 03.jpg
+File:H3DAR Un-Conference 06.jpg
+File:HK TKO 將軍澳 Tseung Kwan O Park Central mall November 2024 SS21G5 29.jpg
+File:HK TKO 將軍澳 Tseung Kwan O Park Central mall shop Beans Bakery Cafe November 2024 SS21G5 06.jpg
+File:HK TKO 將軍澳 Tseung Kwan O Park Central mall shop Beans Bakery Cafe November 2024 SS21G5 08.jpg
+File:HP-1719CMP & N235FR (29410367900).jpg
+File:HP-1719CMP & N235FR (29619992581).jpg
+File:HP-1719CMP & N235FR (29665626336).jpg
+File:HP-1719CMP & TF-FII (29578039321).jpg
+File:HP-1853CMP (29236692014).jpg
+File:HP-1853CMP (29570730870).jpg
+File:Hakusan Thikado Raikoji Station.jpg
+File:Harbour rail trail by Puistokatu in Kaivopuisto, Helsinki, Finland, 2021.jpg
+File:Harvey Norman Appliance Outlet Dunedin, 1 Jul 2026.jpg
+File:Hietalahdenlaituri in Punavuori, Helsinki, Finland, 2021 April (cropped).jpg
+File:Hodinovy Stroj Kostel Sv Stepana Kvilda A.jpg
+File:Hodinovy Stroj Kostel Sv Stepana Kvilda B.jpg
+File:Horsefair 1908 - 2026-09-11 - Andy Mabbett - 01.jpg
+File:Horsefair 1908 - 2026-09-11 - Andy Mabbett - 03.jpg
+File:Horsefair 1908 - 2026-09-12 - Andy Mabbett.jpg
+File:Hot chocolate with marshmallows (cropped).jpg
+File:Houses in St Lucia in 2015, 04.JPG
+File:Houses in St Lucia in 2015, 05.JPG
+File:Houses in St Lucia in 2015, 08.JPG
+File:Hradlovy Most Rechle Modrava Sumava 2025.jpg
+File:IDOL RUNWAY COLLECTION 2026 AW Supported by TGC 横浜アリーナ 2026年9月20日の横浜市 202609201109 IMG 3470.jpg
+File:IDOL RUNWAY COLLECTION 2026AW Supported by TGC 横浜アリーナ 2026年9月20日の横浜市 202609201110 IMG 3474.jpg
+File:IY Marudai Tatemono-Zaisanhyo.jpg
+File:Iglesia de San Francisco (Interior).jpg
+File:Igreja de Nossa Senhora da Boa Morte no distrito de Jordão, em Taperoá - Bahia* 07.jpg
+File:Igreja de Nossa Senhora da Boa Morte no distrito de Jordão, em Taperoá - Bahia* 09.jpg
+File:Igreja de Nossa Senhora da Boa Morte no distrito de Jordão, em Taperoá - Bahia* 10.jpg
+File:Igreja de Nossa Senhora da Boa Morte no distrito de Jordão, em Taperoá - Bahia* 12.jpg
+File:Igreja de Nossa Senhora da Boa Morte no distrito de Jordão, em Taperoá - Bahia* 14.jpg
+File:Igreja de Nossa Senhora da Boa Morte no distrito de Jordão, em Taperoá - Bahia* 16.jpg
+File:Igreja de Nossa Senhora da Boa Morte no distrito de Jordão, em Taperoá - Bahia* 18.jpg
+File:Indooroopilly War Memorial 01.JPG
+File:Indooroopilly War Memorial 02.JPG
+File:Interior left view of the Jindun Chenghuang Temple, as taken on 11 January 2021.jpg
+File:Jan Fischer (1960) Kvilda 23 VIII 2025.jpg
+File:Jardin des Tuileries, Musée du Louvre et Arc de Triomphe du Carrousel 100.jpg
+File:Jardin des Tuileries, Musée du Louvre et Arc de Triomphe du Carrousel 80.jpg
+File:Jardin des Tuileries, Musée du Louvre et Arc de Triomphe du Carrousel 84.jpg
+File:Jardin des Tuileries, Musée du Louvre et Arc de Triomphe du Carrousel 85.jpg
+File:Jardin des Tuileries, Musée du Louvre et Arc de Triomphe du Carrousel 86.jpg
+File:Jardin des Tuileries, Musée du Louvre et Arc de Triomphe du Carrousel 88.jpg
+File:Jardin des Tuileries, Musée du Louvre et Arc de Triomphe du Carrousel 91.jpg
+File:Jardin des Tuileries, Musée du Louvre et Arc de Triomphe du Carrousel 94.jpg
+File:Jardin des Tuileries, Musée du Louvre et Arc de Triomphe du Carrousel 95.jpg
+File:Jardin des Tuileries, Musée du Louvre et Arc de Triomphe du Carrousel 96.jpg
+File:Jardin des Tuileries, Musée du Louvre et Arc de Triomphe du Carrousel 99.jpg
+File:Jindun Chenghuang Temple under cloudy sky on 11 January 2021.jpg
+File:Jindun Chenghuang Temple under the treetops on 11 January 2021.jpg
+File:Jordgubbstårta med svensk flagga.jpg
+File:Kadorin Hitomi as Sena Kashiwazaki sitting on the ground at Expo Dome court yard 20261011 161245.jpg
+File:Kia Ceed Sportswagon 1.5 T-GDI 48V DCT Ultimate Edition (III, Facelift) – h 07062026.jpg
+File:King Edward Street businesses night, 24 Jun 2026.jpg
+File:Kingstanding Odeon - 2026-07-17 - Andy Mabbett - 29.jpg
+File:Kingstanding Odeon - 2026-07-17 - Andy Mabbett - 30.jpg
+File:Kingstanding Odeon - 2026-07-17 - Andy Mabbett - 31.jpg
+File:Kingstanding Odeon - 2026-07-17 - Andy Mabbett - 34.jpg
+File:Kingsway, London.jpg
+File:Koohrang 1.jpg
+File:Koohrang 2.jpg
+File:Kozienice Forest, 2026.10.01.jpg
+File:Krapkowice, 2026.09.08 10.jpg
+File:Krapkowice, 2026.09.08 12.jpg
+File:Krapkowice, 2026.09.08 16.jpg
+File:Krapkowice, 2026.09.08 17.jpg
+File:Law Courts, Brisbane site following demolition of the complex.JPG
+File:Leeuwarden (06.08.2025) 20.jpg
+File:Leeuwarden (06.08.2025) 24.jpg
+File:Leeuwarden (06.08.2025) 25.jpg
+File:Leeuwarden (06.08.2025) 31.jpg
+File:Leeuwarden (06.08.2025) 32.jpg
+File:Leeuwarden (06.08.2025) 36.jpg
+File:Leeuwarden (06.08.2025) 39.jpg
+File:Leeuwarden (06.08.2025) 41.jpg
+File:Leeuwarden (06.08.2025) 42.jpg
+File:Leeuwarden (06.08.2025) 44.jpg
+File:Leeuwarden (06.08.2025) 46.jpg
+File:Leeuwarden (06.08.2025) 47.jpg
+File:Leeuwarden (06.08.2025) 50.jpg
+File:Lego 'rainbow' earring - 2026-07-25 - Andy Mabbett.jpg
+File:Leśna Zamek Czocha 26.jpg
+File:Leśna Zamek Czocha 27.jpg
+File:Leśna Zamek Czocha 30.jpg
+File:Leśna Zamek Czocha 31.jpg
+File:Leśna Zamek Czocha 32.jpg
+File:Leśna Zamek Czocha 39.jpg
+File:Leśna Zamek Czocha 40.jpg
+File:Leśna Zamek Czocha 42.jpg
+File:Leśna Zamek Czocha 44.jpg
+File:Leśna Zamek Czocha 45.jpg
+File:Leśna Zamek Czocha 47.jpg
+File:Leśna Zamek Czocha 52.jpg
+File:Limoges goose serving dish - 2026-09-17 - Andy Mabbett - 02.jpg
+File:Lintou Wanshan Temple 01.jpg
+File:Lintou Wanshan Temple.jpg
+File:Lipsk rzeźba 01.jpg
+File:Lipsk wiata 01.jpg
+File:Lok bei Bagger 1452 Hagenwerder.jpg
+File:Longarone - Cimitero di Fortogna - 2025-09-01 22-06-01 001.jpg
+File:Longarone - Cimitero di Fortogna - 2025-09-01 22-06-01 002.jpg
+File:Longarone - Cimitero di Fortogna - 2025-09-01 22-06-01 003.jpg
+File:Longarone - Cimitero di Fortogna - 2025-09-01 22-06-01 004.jpg
+File:Lwów Katedra Ormiańska 04.jpg
+File:Lwów Katedra Ormiańska 10.jpg
+File:Lwów Katedra Ormiańska 11.jpg
+File:Lwów Katedra Łacińska 26.jpg
+File:Lwów Katedra Łacińska 28.jpg
+File:Lwów Katedra Łacińska 31.jpg
+File:Lwów Katedra Łacińska 33.jpg
+File:Lwów Katedra Łacińska 34.jpg
+File:Lwów Katedra Łacińska 37.jpg
+File:Löbau Ortsausgangsschild.jpg
+File:Löbau, Görlitzer Straße 5 Januar 2011.jpg
+File:Löbau, Görlitzer Straße 9.jpg
+File:Löbau, Stauffenbergstraße Dezember 2010.jpg
+File:Löbauer Wasser nach Hochwasser 2010 01.jpg
+File:Löbauer Wasser nach Hochwasser 2010 02.jpg
+File:Magicbands and Disney Watch (15806457300).jpg
+File:Many red lanterns hanging in front of the entrance to Jindun Chenghuang Temple on 11 January 2021.jpg
+File:Markuševec Mortuary 20240726 161911.jpg
+File:Markuševec Mortuary 20240726 162141.jpg
+File:Markuševec Mortuary 20240726 162257.jpg
+File:Mercedes-Benz B 180 Progressive (W 247, Facelift) – f 05072026.jpg
+File:Mercedes-Benz CLA 200 mit EQ-Technologie Shooting Brake AMG Line (X 174) – h 04062026.jpg
+File:Metro Bank, Southampton Row, London.jpg
+File:Mikulov Fontanna z posągiem Obfitości 01.jpg
+File:Mikulov kościół św. Anny 01.jpg
+File:Mikulov kościół św. Anny 03.jpg
+File:Mikulov kościół św. Anny płyta 01.jpg
+File:Mikulov pomnik Franciszka Józefa von Dietrichsteina 02.jpg
+File:Mikulov pomnik Franciszka Józefa von Dietrichsteina 03.jpg
+File:Mikulov ul. Koněvova dawna kaplica 01.jpg
+File:Mikulov ul. Koněvova dawna kaplica 02.jpg
+File:Mikulov ul. Svobody figura św. Jana Nepomucena 01.jpg
+File:Mikulov widok ze Świętego Pagórka 06.jpg
+File:Milan Hlaves (1970) Galerie Kuzebauch 30 IX 2025.jpg
+File:Mississippi Supreme Court Justice Jim Kitchens.jpg
+File:Monument Valley 5.JPG
+File:Monument aux Morts de Elne - Aristide Maillol.jpg
+File:Musselburgh Pharmacy brick path, 29 Jul 2026.jpg
+File:Mychajlo Hrusevskyj Pam Deska Praha 7.jpg
+File:N37263 at United's Orlando Technical Operations (29533373530).jpg
+File:NSU Prinz 4 L – f 05082026.jpg
+File:Nagaoka Station EV2018.jpg
+File:Nanking Palace restaurant night, 24 Jun 2026.jpg
+File:Neumarkt 3 Löbau.jpg
+File:New Orleans Steamcog Orchestra 01.jpg
+File:New Orleans Steamcog Orchestra 04.jpg
+File:New Orleans Steamcog Orchestra 05.jpg
+File:New Orleans Steamcog Orchestra 07.jpg
+File:Ngong Ping 360 Cable Car No.18 22-06-2025(2).jpg
+File:Ngong Ping 360 Cable Car No.37 22-06-2025.jpg
+File:Nichirei Akashicho Building, at Akashicho, Chuo, Tokyo (2019-01-02).jpg
+File:Night Shelter Trust Dunedin, 30 Jul 2026.jpg
+File:Niigata Muikamachi High School Koshien Sekihi.jpg
+File:Niigata Muikamachi High School Kousya.jpg
+File:North Rim of the Grand Canyon.JPG
+File:Ocean (Olbia).jpg
+File:Olla ansata.JPG
+File:One-north 11-08-2025.jpg
+File:One-north Station concourse 11-08-2025(5).jpg
+File:Opened and unopened blister packs of Co-Diovan (Valsartan and hydrochlorothiazide), Singapore - 20150223-02.jpg
+File:Opole Kościuszki 17 kamienica 03 (cropped).jpg
+File:Opole katedra 04 (cropped).jpg
+File:Orlando City Game 02 (cropped).jpg
+File:Oslo tollsted rk 117572 IMG 8256.JPG
+File:P040810 20.26.jpg
+File:P050812 18.36 03.jpg
+File:P090313 16.08 01 01.jpg
+File:P240910 15.46.jpg
+File:Palmeho Sklarska Stezka 9 Kamenicky Senov.jpg
+File:Papan informasi jalur angkutan kota Terminal Patria.jpg
+File:Papavers near Chugha Khur 1.jpg
+File:Park Aleksandria jesienią.jpg
+File:Pieschener Hafen (2011).jpg
+File:PinpinPonpon and her computer case at Gamer Stage 20260926 130327.jpg
+File:Ploschad Yunosti reconstruction 2017 04.jpg
+File:Ploschad Yunosti reconstruction 2017 05.jpg
+File:Ploschad Yunosti reconstruction 2017 06.jpg
+File:Plumeria rubra 4.jpg
+File:Port crane on Strelka, Nizhny Novgorod - 2025-06-22.jpg
+File:Post box B73 1200 - 2026-10-09 - Andy Mabbett - 02.jpg
+File:Primer plano de los nervios de la hoja amarilla.jpg
+File:Prospect Peak near Eureka, Nevada 2.JPG
+File:Prospect Peak near Eureka, Nevada 3.JPG
+File:Prospect Peak near Eureka, Nevada.JPG
+File:Prudnik, 2026.09.06 01.jpg
+File:Prudnik, 2026.09.25 01.jpg
+File:Puchheimer Str 20-30 Moosach.jpg
+File:Ramat Gan Diamond Exchange District.jpg
+File:Rathgeberstr 3 Moosach 2.jpg
+File:Red brick bridge and platform of Kashii Line of Chojabaru Station 2.JPG
+File:Refurbished Musselburgh Rise pedestrian crossing, 29 Jul 2026.jpg
+File:Resurrection Church, Nizhny Novgorod - 2026-09-21 01.jpg
+File:Resurrection Church, Nizhny Novgorod - 2026-09-21 04.jpg
+File:Resurrection Church, Nizhny Novgorod - 2026-09-21 05.jpg
+File:Rilievo votivo in calcare.JPG
+File:Rovinj IMG 0624m.JPG
+File:Ru de Piffonds-Courtenay 04.jpg
+File:SG1841X Go-Ahead Singapore 354 11-08-2025.jpg
+File:SMRT East-West Line train 11-08-2025(2).jpg
+File:ST1 automaattiasema.jpg
+File:Sainsbury's Local, Holborn.jpg
+File:Samsung Galaxy Z Fold8 about.jpg
+File:Samsung W26 rear.jpg
+File:Saša Zalepugin's grave 20240706 161342.jpg
+File:Saša Zalepugin's grave 20240706 161857.jpg
+File:Schaufelradbagger 1452.jpg
+File:Schodiste Vez Kostela Sv Stepana Kvilda C.jpg
+File:Scultura Casa del vento.jpg
+File:Semirom falls 2.jpg
+File:September 11 - American Flag (29332646680).jpg
+File:Sequoia National Park - Welcome Sign.JPG
+File:Sharp ES-HD63L at Hotel Nord Otaru (53950368597).jpg
+File:Shelter Angkutan kota & MPU Terminal Patria.jpg
+File:Skei kapell Eide IMG 7922.JPG
+File:Skei kapell Eide IMG 7973.JPG
+File:Skeistua IMG 7915.JPG
+File:Skeistua IMG 7916.JPG
+File:Skeistua IMG 7917.JPG
+File:Skeistua IMG 7972.JPG
+File:Solebrunnen - Kolobrzeg - Tafelinschrift.jpg
+File:Sphagneticola Trilobata Yellow Flower.jpg
+File:Spiaggia Cervia.jpg
+File:St Clair School front gate and crossing, 23 Jul 2026.jpg
+File:St Clair School playground, 22 Jul 2026.jpg
+File:St. Nicholas Naval Cathedral, Kronstadt - 2026-08-07 01.jpg
+File:St. Nicholas Naval Cathedral, Kronstadt - 2026-08-07 02.jpg
+File:St. Nicholas Naval Cathedral, Kronstadt - 2026-08-07 03.jpg
+File:St. Nicholas Naval Cathedral, Kronstadt - 2026-08-07 04.jpg
+File:St. Nicholas Naval Cathedral, Kronstadt - 2026-08-07 06.jpg
+File:Staple Inn 2.jpg
+File:Staple Inn London.jpg
+File:Statuia eroilor aerului.jpg
+File:Storm Roux 2016.jpg
+File:Stubbefreser IMG 6007.JPG
+File:Stubbefreser IMG 6008.JPG
+File:Stěrače, část 04.jpg
+File:Stěrače, část 13.jpg
+File:Stěrače, část 15.jpg
+File:Stěrače, část 16.jpg
+File:Suomen Poliisin tunnus.jpg
+File:Surfing Clouds beneath the mountains.jpg
+File:Szudziałowo Kościół śś. Wincentego Ferrariusza i Bartłomieja Apostoła 01.jpg
+File:Szudziałowo Kościół śś. Wincentego Ferrariusza i Bartłomieja Apostoła 04.jpg
+File:Szudziałowo Kościół śś. Wincentego Ferrariusza i Bartłomieja Apostoła 07.jpg
+File:Szudziałowo Kościół śś. Wincentego Ferrariusza i Bartłomieja Apostoła 10.jpg
+File:Szudziałowo Kościół śś. Wincentego Ferrariusza i Bartłomieja Apostoła 13.jpg
+File:Szudziałowo Kościół śś. Wincentego Ferrariusza i Bartłomieja Apostoła 15.jpg
+File:Szudziałowo Kościół śś. Wincentego Ferrariusza i Bartłomieja Apostoła 16.jpg
+File:Szudziałowo Kościół śś. Wincentego Ferrariusza i Bartłomieja Apostoła 17.jpg
+File:Szudziałowo Kościół śś. Wincentego Ferrariusza i Bartłomieja Apostoła 21.jpg
+File:TF-FIR (29933598776).jpg
+File:TR EM512 at Platform 1A, Xizhi Station 20261005 T1724.jpg
+File:TR EM9452 and Xizhi Junior High School one girl at Platform 2A, Xizhi Station 20261021 T1754.jpg
+File:TR PPT1042 seats, Chinese Security male staff and iPhone at Platform 2A, Songshan Station 20261025.jpg
+File:Tablica z nazwą miejscowości Sławkowice.jpg
+File:Taiwan's 103rd National Day (15586177981).jpg
+File:Tampak belakang shelter bus Terminal Patria.jpg
+File:Tampak depan Terminal Patria.jpg
+File:Tažná tramvaj 01.jpg
+File:The Chorus Line by Hilary Cartmel - geograph.org.uk - 3086590.jpg
+File:The Clementi Mall 11-08-2025.jpg
+File:The Last Flight - 2026-10-29 - Andy Mabbett - 02.jpg
+File:Thumboormuzhi Dam IMG20231023144413.jpg
+File:Thumboormuzhi Dam IMG20231023145059.jpg
+File:Tianyang Chenghuang Temple under cloudy sky on 11 January 2021.jpg
+File:Tokyo Sumitomo Twin Building.jpg
+File:Train Pod @ one-north 11-08-2025(1).jpg
+File:Transport GZM bilet N 40 ticket.jpg
+File:Tree beside the Jindun Chenghuang Temple, as taken on 11 January 2021.jpg
+File:TurismoInclusivoFoto.jpg
+File:Tüchersfeld-EC.JPG
+File:Ulricherstraße 39 (4).jpg
+File:Ulricherstraße 41 (2).jpg
+File:Ulricherstraße 41 (5).jpg
+File:Unloading the London Evening Standard, Chancery Lane Stn, Holborn, Nov 2014.jpg
+File:VW Caravelle TDI 4Motion Edition (VII) – f 31052026.jpg
+File:VW Caravelle TDI 4Motion Edition (VII) – h 31052026.jpg
+File:VW Golf III, rameno stěrače 01.jpg
+File:VW Golf III, rameno stěrače 02.jpg
+File:VW Golf III, rameno stěrače 03.jpg
+File:Vaso di Pantalica.JPG
+File:Vecchio incasato porta da mare.jpg
+File:Verge Hairdressing and new brick path, 29 Jul 2026.jpg
+File:ViernesSanto1a.jpg
+File:ViernesSanto2a.jpg
+File:View looking up at the entrance to Tianyang Chenghuang Temple on 11 January 2021.jpg
+File:Vivi standing and using iPhone at Expo Dome court yard 20191229.jpg
+File:Waer 23.jpg
+File:Waer 34.jpg
+File:Waggonfabrik Josef Rathgeber Ehem Verwaltungsgebäude Moosach 4.jpg
+File:Warszawa kościół św. Anny 38 (cropped).jpg
+File:WikiConvention Francophone 2022, Balade. 42.jpg
+File:WikiConvention Francophone 2022, Balade. 44.jpg
+File:WikiConvention Francophone 2022, Balade. 46.jpg
+File:WikiConvention Francophone 2022, Balade. 47.jpg
+File:WikiConvention Francophone 2022, Balade. 49.jpg
+File:WikiConvention Francophone 3è Journée - Atelier de formation. 01.jpg
+File:WikiConvention Francophone 3è Journée - Atelier de formation. 03.jpg
+File:WikiConvention Francophone 3è Journée - Atelier de formation. 04.jpg
+File:WikiConvention Francophone 3è Journée - Atelier de formation. 08.jpg
+File:WikiConvention Francophone 3è Journée - Atelier de formation. 10.jpg
+File:Wikimania Esino Lario 2016 - Rohit, Felix, Satdeep.jpg
+File:Wla photowalk nima 38.jpg
+File:Wla photowalk nima 40.jpg
+File:Wla photowalk nima accra 02.jpg
+File:Wla photowalk nima accra 05.jpg
+File:Wla photowalk nima accra 06.jpg
+File:Wla photowalk nima accra 08.jpg
+File:Wla photowalk nima accra 11.jpg
+File:Wla photowalk nima accra 12.jpg
+File:Wla photowalk nima accra 13.jpg
+File:Wla photowalk nima accra 20.jpg
+File:Wla photowalk nima accra 24.jpg
+File:Wla photowalk nima accra 27.jpg
+File:Wolfsberg - Trubachtal.JPG
+File:Women Day workshop Tunisia 03.jpg
+File:Wooden red step ladder.jpg
+File:Woodlands Road 09-08-2025.jpg
+File:Writing on the whiteboard.jpg
+File:Wyjątkowe pochylone drzewo w parku Aleksandria w Siedlcach.jpg
+File:Yellow building block; Dnipro, Ukraine; 11.11.19.jpg
+File:Yellow garden hose.jpg
+File:Yellow jacobinia.jpg
+File:Yellow work light tripod.jpg
+File:Yorckstrabe Station (52061227287).jpg
+File:Yoroi Bridge, at Nihonbashi-Kabutocho, Chuo, Tokyo (2019-01-02).jpg
+File:Yosemite National Park 2.JPG
+File:Yoshii Elementary School in Ukiha, Fukuoka.jpg
+File:ZUŠ J. Poschla - vedenie 14.3.2011.jpg
+File:Zalew Sokólski 02.jpg
+File:Začátek Krušnohorské lyžařské magistrály Sněžník.jpg
+File:Zvonimir Milčec's grave 20240726 154448.jpg
+File:Łódź Doły Pomnik Ofiar Obozów Hitlerowskich 02.jpg
+File:Łódź Doły Władysław Kołowski 01.jpg
+File:Łódź Doły Władysława Bytomska 01.jpg
+File:Łódź pomnik Grzegorza Palki 01.jpg
+File:Домик Стрельца. Фото 2.jpg
+File:Козарачка Улица, Лесковац.jpg
+File:Мемориальная табличка на плотине.jpg
+File:Плотина в Павловске.jpg
+File:Старые ворота в Труворово городище.jpg
+File:Труворово городище. Старые ворота.jpg
+File:Церковь Николая Чудотворца в Любятове. Фото 1.jpg
+File:Церковь Николая Чудотворца в Любятове. Фото 3.jpg
+File:Шарена џамија 34.jpg
+File:Шарена џамија 35.jpg
+File:Шарена џамија 36.jpg
+File:Шарена џамија 43.jpg
+File:Шарена џамија 46.jpg
+File:Шарена џамија 47.jpg
+File:Шарена џамија 49.jpg
+File:Шарена џамија 53.jpg
+File:גבעת כח 2008.jpg
+File:أظرف اليوم الاول 102.jpg
+File:أظرف اليوم الاول 103.jpg
+File:أظرف اليوم الاول 108.jpg
+File:أظرف اليوم الاول 112.jpg
+File:أظرف اليوم الاول 121.jpg
+File:أظرف اليوم الاول 124.jpg
+File:أظرف اليوم الاول 88.jpg
+File:اللمهيل.jpg
+File:سرشك2.jpg
+File:سرشك6.jpg
+File:【JERA セ・リーグ公式戦】東京ヤクルトスワローズ vs 広島東洋カープ 23回戦 明治神宮野球場 2026年9月14日の東京 202609141832 IMG 1601.jpg
+File:【JERA セ・リーグ公式戦】東京ヤクルトスワローズ vs 阪神タイガース 22回戦 明治神宮野球場 2026年9月22日の東京 202609221746 IMG 3966.jpg
+File:【JERA セ・リーグ公式戦】東京ヤクルトスワローズ vs 阪神タイガース 23回戦 明治神宮野球場 2026年9月23日の東京 202609231315 IMG 4213.jpg
+File:【JERA セ・リーグ公式戦】横浜DeNAベイスターズ vs 東京ヤクルトスワローズ 24回戦 横浜スタジアム 2026年9月18日の横浜 202609181418 IMG 2599.jpg
+File:【JERA セ・リーグ公式戦】横浜DeNAベイスターズ vs 東京ヤクルトスワローズ 24回戦 横浜スタジアム 2026年9月18日の横浜 202609181425 IMG 2612.jpg
+File:【JERA セ・リーグ公式戦】横浜DeNAベイスターズ vs 東京ヤクルトスワローズ 24回戦 横浜スタジアム 2026年9月18日の横浜 202609181426 IMG 2614.jpg
+File:コロナ禍の秋 (50511677453).jpg
+File:安宅中營頭 04.jpg
+File:安宅西將軍廟 02.jpg
+File:安宅西將軍廟 03.jpg
+File:安宅西將軍廟 05 芳名錄.jpg
+File:安宅西將軍廟 10 線香.jpg
+File:安宅西將軍廟 11 水槽與芳名錄.jpg
+File:岳阳南站站楼.jpg
+File:旗鼓二號客艙 20241022.jpg
+File:旗鼓二號客艙 20241104.jpg
+File:港仔尾五營頭 06.jpg
+File:港仔尾五營頭 07.jpg
+File:港仔尾五營頭 09 香爐內的竹符.jpg
+File:第43回マイナビ東京ガールズコレクション2026AW 横浜アリーナ 2026年9月19日の横浜市 202609191424 IMG 3057.jpg
+File:第43回マイナビ東京ガールズコレクション2026AW 横浜アリーナ 2026年9月19日の横浜市 202609191435 IMG 3072.jpg
+File:第43回マイナビ東京ガールズコレクション2026AW 横浜アリーナ 2026年9月19日の横浜市 202609191436 IMG 3073.jpg
+File:第43回マイナビ東京ガールズコレクション2026AW 横浜アリーナ 2026年9月19日の横浜市 202609191439 IMG 3082.jpg
+File:高雄市公共車船處壽山輪樓梯 20241010.jpg

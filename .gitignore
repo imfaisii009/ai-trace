@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+.venv/
+.DS_Store
+*.onnx
+!public/models/*.onnx
+*.onnx.data
+__pycache__/

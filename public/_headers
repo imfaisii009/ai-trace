@@ -1,0 +1,5 @@
+# Cross-origin isolation lets the AI-image model run on every CPU core (ONNX Runtime Web threads).
+# credentialless, not require-corp, so the Google Fonts stylesheet still loads.
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: credentialless
