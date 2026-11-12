@@ -18,7 +18,7 @@ const ORT = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.1/dist/';
 export const MODEL = {
   url: new URL('./models/commfor-384-grok-ft-w8.onnx', import.meta.url).href,
   size: '23 MB',
-  threshold: 0.6, // docs/finetune.md: no held-out phone photo and 0.7% of other real photos reach it
+  threshold: 0.6, // docs/finetune.md: no held-out phone photo and 1.3% of other real photos reach it
 };
 const N = 384;
 const MEAN = [0.485, 0.456, 0.406];

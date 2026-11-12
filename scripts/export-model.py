@@ -80,6 +80,7 @@ for init in g.initializer:
     q = np.clip(np.round(w / scale.reshape(shape)), -127, 127).astype(np.int8)
     keep += [numpy_helper.from_array(q, init.name + '_q'), numpy_helper.from_array(scale, init.name + '_s')]
     dq.append(helper.make_node('DequantizeLinear', [init.name + '_q', init.name + '_s'], [init.name], axis=ax))
+assert dq, 'no weight was quantised: this exporter version wires weights differently (tested versions above)'  # it would ship an 88 MB float32 file
 del g.initializer[:]
 g.initializer.extend(keep)
 nodes = list(g.node)

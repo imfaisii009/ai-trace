@@ -10,7 +10,7 @@ stored as 8-bit integers, by `scripts/export-model.py`. Paper: Jeongsoo Park and
 Using Thousands of Generators to Train Fake Image Detectors", CVPR 2025
 (https://arxiv.org/abs/2411.04125).
 
-SHA-256 of the bundled file: 15a482f6b1613b92538d27ed71ab1ab503e237a929a1e79e67892e5de034b228
+SHA-256 of the bundled file: 54d118e97fae4b345e1ec99588556f55547a157c55077ee9457021889aa60467
 
 ```
 MIT License

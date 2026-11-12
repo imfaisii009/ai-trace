@@ -343,7 +343,7 @@ async function runModel(file) {
     el.innerHTML = `<p>Scored ${plural(a.tiles.length, 'tile')} in ${((a.ms + (identical ? 0 : b.ms)) / 1000).toFixed(1)} s${identical ? ', once, because both copies decode to the same pixels' : ' in each copy'}, against a line of ${pct(MODEL.threshold)}. The heatmaps are under Original and clean copy below.</p>`;
     $('#comparison-result').innerHTML = `<p>${verdict}</p>
       <div class="legend"><span>0%</span><i></i><span>100%</span></div>
-      <p class="small">Blue is where the model sees a camera photo, red where it sees a generator, to a resolution of 16 pixels${a.scaled ? ` in the image scaled to ${a.width} × ${a.height}` : ''}. In our tests it caught 102 of 102 AI-edited phone photos and called 6 of 254 real photos AI, so treat it as a pointer, not proof. See How detection works.</p>`;
+      <p class="small">Blue is where the model sees a camera photo, red where it sees a generator, to a resolution of 16 pixels${a.scaled ? ` in the image scaled to ${a.width} × ${a.height}` : ''}. In our tests it caught 102 of 102 AI-edited phone photos and called 3 of 254 real photos AI, so treat it as a pointer, not proof. See How detection works.</p>`;
   } catch (err) {
     if (el.isConnected) el.innerHTML = `<p>Could not run the model: ${esc(err.message)}</p>`;
   }
