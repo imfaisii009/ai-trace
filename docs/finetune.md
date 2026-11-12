@@ -20,6 +20,7 @@ Photos are split into training and validation by a hash of the photo, so a photo
 
 - 384-pixel crops: ten native-resolution crops per real photo, the whole photo resized, and random crops of each edit and replay image.
 - Both classes get the same random downscaling (40-100% for whole photos, 60-100% half the time for the rest) and the same JPEG re-encoding (quality 70-98, 60% of the time), so neither size nor compression gives the label away.
+- Since 12 November 2026, `train.py` also gives both classes camera-style processing, each step 30% of the time: lateral chromatic aberration (up to 0.3%), sensor grain (luminance sigma 1-6 of 255, chroma 0-3) and sharpening. The model on the page was trained before this change; see Limits.
 - AdamW, learning rate 3e-5, weight decay 0.05, cosine schedule with warm-up, batch 64, bfloat16, 6 epochs. Edits are repeated 8 times per epoch and replay 4 times, to balance the classes.
 - Epoch 5 of 6 was kept: on the test sets below it caught every edit and scored the film scans lower than epoch 6.
 
@@ -51,6 +52,7 @@ The 60% line was chosen by looking at these test sets, so the false-positive rat
 - **Film scans.** Lossless scans of film (Kodak's test set) are the weak spot: 5 of 24 over the line. Saved as JPEG, 2 of 24. Scans, screenshots and other non-camera images are less well covered than phone photos.
 - **One editor.** Every training edit came from Grok. Edits from other tools (Gemini, ChatGPT, Firefly, Photoshop generative fill) were not in training; the replay set covers their fully generated images, not their edits.
 - **Small pastes.** A small generated region pasted into a real photo is still hard to see (see [heatmap-evaluation.md](heatmap-evaluation.md), measured on the published weights). The training edits regenerate the whole frame.
+- **Camera-style processing.** On 12 November 2026, `scripts/robustness.mjs` took the AI edit of the room photo (70%) under the line with any one of light grain (13%), gentle sharpening (26%), chromatic aberration (45%) or JPEG at quality 85 (44%); all six of its steps together took it to 0%. One image only. The training change above is meant to close this and is unmeasured until the next retrain.
 - **A score is a pointer.** It is evidence to weigh, not proof.
 
 ## Repeat it

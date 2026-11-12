@@ -1,8 +1,8 @@
 # Fine-tune Community Forensics ViT-S/16 384 on phone photos vs Grok edits of them, with replay of generic generated images.
-# Both classes get the same random resampling and JPEG re-encoding, so neither size nor compression gives the label away.
+# Both classes get the same random resampling, camera-style processing and JPEG re-encoding, so none of them gives the label away.
 import io, json, math, random, sys, time, os
 import numpy as np, torch, timm
-from PIL import Image
+from PIL import Image, ImageFilter
 from torch.utils.data import Dataset, DataLoader
 from safetensors.torch import load_file
 from huggingface_hub import hf_hub_download
@@ -18,6 +18,19 @@ def tile(a, y0, x0):
     return a[np.minimum(np.arange(y0, y0 + N), H - 1)][:, np.minimum(np.arange(x0, x0 + N), W - 1)]
 def shrink(im, k):
     return im.resize((max(1, round(im.width * k)), max(1, round(im.height * k))), random.choice([Image.LANCZOS, Image.BICUBIC, Image.BILINEAR])) if k < 1 else im
+def camera(im):
+    # Each of these alone took an AI edit under the line in scripts/robustness.mjs. In camera order: lens, sensor, processing.
+    if random.random() < 0.3:  # lateral chromatic aberration: red scaled up about the centre, blue down, by up to 0.3%
+        k = random.uniform(0.0005, 0.003); cx, cy = im.width / 2, im.height / 2
+        zoom = lambda ch, s: ch.transform(im.size, Image.AFFINE, (1 / s, 0, cx * (1 - 1 / s), 0, 1 / s, cy * (1 - 1 / s)), Image.BILINEAR)
+        r, g, b = im.split(); im = Image.merge('RGB', (zoom(r, 1 + k), g, zoom(b, 1 - k)))
+    if random.random() < 0.3:  # sensor grain: luminance noise (sigma 1-6 of 255) plus chroma noise (sigma 0-3)
+        rng = np.random.default_rng(random.getrandbits(32))  # from Python's RNG, which DataLoader seeds per worker
+        a = np.asarray(im, np.float32); a = a + rng.normal(0, random.uniform(1, 6), a.shape[:2])[..., None] + rng.normal(0, random.uniform(0, 3), a.shape)
+        im = Image.fromarray(np.clip(np.rint(a), 0, 255).astype(np.uint8))
+    if random.random() < 0.3:  # sharpening, from a phone's fine sharpening to a wide, gentle local-contrast boost
+        im = im.filter(ImageFilter.UnsharpMask(radius=random.uniform(0.8, 4), percent=random.randint(20, 80), threshold=0))
+    return im
 class Train(Dataset):
     REPEAT = {'crop': 1, 'master': 4, 'edit': 8, 'replay': 4, 'replay_real': 4}
     def __init__(self, items): self.items = [it for it in items if it['split'] == 'train' for _ in range(self.REPEAT[it['kind']])]
@@ -28,7 +41,7 @@ class Train(Dataset):
         elif it['kind'] != 'crop' and random.random() < 0.5: im = shrink(im, random.uniform(0.6, 1.0))
         a = np.asarray(im); H, W, _ = a.shape
         a = tile(a, random.randint(0, max(0, H - N)), random.randint(0, max(0, W - N)))
-        im = Image.fromarray(a)
+        im = camera(Image.fromarray(a))
         if random.random() < 0.6:
             b = io.BytesIO(); im.save(b, 'JPEG', quality=random.randint(70, 98)); im = Image.open(b).convert('RGB')
         if random.random() < 0.5: im = im.transpose(Image.FLIP_LEFT_RIGHT)
